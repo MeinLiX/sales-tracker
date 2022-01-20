@@ -11,9 +11,11 @@ pids
 *.pid
 *.db
 *.seed
-
-build/Release
 node_modules
-db
-config.js
+package-lock.json
+
+# Ignore built ts files
+dist/**/*
+
 logs.csv
+.env
