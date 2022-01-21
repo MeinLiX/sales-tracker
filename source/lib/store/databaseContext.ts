@@ -1,13 +1,16 @@
-import DatabaseUser from "./databaseUser";
+import DatabaseUsers from "./databaseUsers";
+import DatabaseSales from "./databaseSales";
 
 const sqlite = require("sqlite-sync")
 
 export default class DatabaseContext {
-    public User: DatabaseUser;
+    public Users: DatabaseUsers;
+    public Sales: DatabaseSales;
 
     constructor() {
         this.connect();
-        this.User = new DatabaseUser();
+        this.Users = new DatabaseUsers();
+        this.Sales = new DatabaseSales();
     }
 
     public connect(): void {
