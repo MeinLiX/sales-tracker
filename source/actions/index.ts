@@ -1,6 +1,7 @@
 import {Composer} from "telegraf";
-import textHandler from './textHandler';
+
 import {IContext} from "../lib/IContext";
+import textHandler from './textHandler';
 
 export default new Composer<IContext>().use(
     textHandler
