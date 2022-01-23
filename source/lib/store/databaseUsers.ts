@@ -17,7 +17,7 @@ export default class DatabaseUsers implements IDatabaseTable {
 
     public async get(chatID: number): Promise<IUser | null> {
         let res: any = sqlite.run(`SELECT * FROM USERS WHERE chatID= ?`, [chatID]);
-        if (res == [] || res.error) return null;
+        if (res.length === 0 || res.error) return null;
         return new User(res[0].chatID, res[0].username, res[0].first_name, res[0].last_name, res[0].user_state);
     }
 }
